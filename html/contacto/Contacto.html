@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/contacto/Estilo-Contacto.css">
+    <link rel="stylesheet" href="../../css/home/btn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../css/contacto/Estilo-Contacto.css"> <!-- Añadido el estilo del formulario de contacto -->
+    <link rel="stylesheet" href="../../css/home/footer.css"> <!-- Añadido el estilo del footer -->
+    <link rel="stylesheet" href="../../css/home/navbar.css"> <!-- Añadido el estilo del navbar -->
+    <title>Contacto</title>
+</head>
+<!-- Contenedor para el navbar -->
+<header id="navbarContainer"></header>
+<body>
+    <div class="contenedor-sections">
+        <section class="contenido1">
+            <div class="Horarios">
+                <h2>Nuestros horarios</h2>
+                <p>Nos complace atenderlos los dias y horarios.</p>
+                <br>
+                <strong>Lunes - Viernes: </strong> 8am - 6pm
+                <br>
+                <strong>Sábado</strong><strong>: </strong>8am - 12:30pm
+                <br>
+                <strong>Domingo</strong><strong>:</strong> Cerrado</p>
+            </div> 
+            </section>
+            
+            <section class="contenido2">
+                <div class="contenido_lectura">
+                    <h2>Contáctanos</h2>
+                    <p><strong>Dirección:</strong><br>
+                        Calle Falsa, 123. </p>
+                        <p><strong>Teléfono:</strong><br>
+                            46357723</p>
+                            <p><strong>Email:</strong><br>
+                                omegaperfumes@gmail.com<br>
+                                &nbsp;</p>
+                            </div>
+                        </section>
+                    </div>
+            <br>
+            <div class="gallery">           
+                <img src="../../img/contacto/img1.png" alt="foto ilustrativa"> <!-- Corregido el formato de id -->
+                <img src="../../img/contacto/img2.png" alt="foto ilustrativa"> <!-- Corregido el formato de id -->
+            </div>
+                
+            <!-- División para el formulario de contacto -->
+            <div id="contacto-formulario">
+                <h2>Formulario de Contacto</h2>
+                <form id="formulario" onsubmit="return validarFormulario()">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div>
+                        <label for="consulta">Consulta:</label>
+                        <textarea id="consulta" name="consulta" required></textarea>
+                    </div>
+                    <div>
+                        <label for="motivo">Motivo de contacto:</label>
+                        <select id="motivo" name="motivo" required>
+                            <option value="">Seleccionar</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="reclamo">Reclamo</option>
+                            <option value="sugerencia">Sugerencia</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="suscripcion" name="suscripcion">
+                        <label for="suscripcion">Suscribirse al boletín</label>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+        
+    
+    <!-- Contenedor para el footer -->
+    <footer id="footerContainer"></footer>
+
+    <script>
+        // Función para cargar el contenido del navbar
+        fetch('../../html/home/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbarContainer').innerHTML = data;
+            });
+        
+        // Función para cargar el contenido del footer
+        fetch('../../html/home/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footerContainer').innerHTML = data;
+            });
+    </script>
+
+    <script>
+      // Función para cargar el contenido del navbar
+      fetch("../../html/home/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbarContainer").innerHTML = data;
+        });
+
+      // Función para cargar el contenido del footer
+      fetch("../../html/home/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footerContainer").innerHTML = data;
+        });
+    </script>
+  </body>
+  </html>

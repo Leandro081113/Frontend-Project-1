@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color: antiquewhite;}
+
+/* Estilos para contenido1 y contenido2 */
+.contenedor-sections {
+    display: flex; /* Utilizar flexbox para igualar la altura de los sections */
+    flex-wrap: wrap; /* Permitir que las secciones se envuelvan en pantallas pequeñas */
+    gap: 20px; /* Espacio entre las secciones */
+}
+
+.contenido1, .contenido2 {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 20px); /* Ajuste del ancho con margen entre ellos */
+    margin: 10px;
+}
+
+/* Estilos para galería de imágenes */
+.gallery {
+    display: flex;
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    gap: 16px; /* Espacio entre las imágenes */
+    max-width: 100%; /* Ajustar al ancho del navegador */
+    overflow-x: auto; /* Agregar desplazamiento horizontal si es necesario */
+    padding: 20px 0; /* Ajuste de padding */
+}
+
+.gallery img {
+    max-width: 460px; /* Ajustar el ancho máximo de las imágenes */
+    height: auto; /* Mantener la proporción */
+    border-radius: 8px; /* Puntas redondas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    flex-shrink: 0; /* Evitar que las imágenes se reduzcan más de lo especificado */
+}
+
+/* Estilos para formulario de contacto */
+#contacto-formulario {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+}
+
+#contacto-formulario h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #007bff;
+    text-align: center;
+}
+
+#contacto-formulario form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#contacto-formulario form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#contacto-formulario form label {
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+#contacto-formulario form input[type="text"],
+#contacto-formulario form input[type="email"],
+#contacto-formulario form input[type="tel"],
+#contacto-formulario form textarea,
+#contacto-formulario form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#contacto-formulario form input[type="text"]:focus,
+#contacto-formulario form input[type="email"]:focus,
+#contacto-formulario form input[type="tel"]:focus,
+#contacto-formulario form textarea:focus,
+#contacto-formulario form select:focus {
+    border-color: #007bff;
+}
+
+#contacto-formulario form input[type="submit"] {
+    grid-column: span 2;
+    padding: 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+#contacto-formulario form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .contenedor-sections {
+        flex-direction: column; /* Cambiar la dirección del flex a columna */
+        align-items: center; /* Centrar los elementos verticalmente */
+    }
+
+    .contenido1,
+    .contenido2 {
+        max-width: calc(100% - 20px); /* Ocupar todo el ancho disponible */
+    }
+
+    .gallery {
+        padding: 20px 0; /* Ajuste de padding */
+    }
+
+    #contacto-formulario form {
+        grid-template-columns: 1fr; /* Cambiar a una columna */
+    }
+}

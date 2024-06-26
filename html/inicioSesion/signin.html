@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="../../css/inicioSesion/signin.css" />
+    <link rel="stylesheet" href="../../css/home/navbar.css">
+  </head>
+  <header id="navbarContainer"></header>
+  <body>
+    <div class="login-box">
+      <img class="avatar" src="../../img/home/logo.jpeg" alt="logo" />
+      <h1>Login here</h1>
+      <form>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter Username"
+        />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter Password"
+        />
+
+        <input type="submit" value="Log In" />
+
+        <a href="#">Lost your password</a>
+        <a href="#">Don’t have an account</a>
+      </form>
+    </div>
+    <script>
+      // Función para cargar el contenido del navbar
+      fetch('../../html/home/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbarContainer').innerHTML = data;
+          });</script>
+          
+  </body>
+</html>
